@@ -19,12 +19,12 @@ const SavedBooks = () => {
   const {loading, error, data: userData} = useQuery(GET_ME);
   const [deleteBook] = useMutation(REMOVE_BOOK);
 
-  // if user has no saved books
-  useEffect(() => {
-    if(userData && userData.me.savedBooks.length === 0) {
-      return <h2>You have no saved books</h2>;
-    }
-  }, [userData]);
+  // // if user has no saved books
+  // useEffect(() => {
+  //   if(userData && userData.me.savedBooks.length === 0) {
+  //     return <h2>You have no saved books</h2>;
+  //   }
+  // }, [userData]);
 
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
