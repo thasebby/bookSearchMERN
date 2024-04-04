@@ -19,7 +19,7 @@ const SignupForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const [addUser] = useMutation(ADD_USER);
+  const [createUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -32,15 +32,11 @@ const SignupForm = () => {
     }
 
     try {
-      const {data} = await addUser({
-        variables: {...userFormData}
+      const {data} = await createUser({
+        variables: {...userFormData }
       });
 
-      if (!data.ok) {
-        throw new Error('something went wrong!');
-      }
-
-    Auth.login(data.addUser.token);
+    Auth.login(data.createUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);

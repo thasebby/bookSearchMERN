@@ -7,7 +7,7 @@ import {
   Col
 } from 'react-bootstrap';
 
-import { getMe, deleteBook } from '../utils/API';
+// import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
@@ -22,7 +22,7 @@ const SavedBooks = () => {
   // if user has no saved books
   useEffect(() => {
     if(userData && userData.me.savedBooks.length === 0) {
-      return <h2>You have no saved books</h2>
+      return <h2>You have no saved books</h2>;
     }
   }, [userData]);
 
